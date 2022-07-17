@@ -33,8 +33,9 @@ const App = ()=>{
             <h1>Movie Land</h1>
 
             <div className="search">
-                <input placeholder="Search For Movies" value={searchTerm} onChange={(e)=>{setSearchTerm(e.target.value)}} />
-                <img src={SearchIcon} alt="search" onClick={()=>setMovies(searchTerm)} />
+                <input placeholder="Search For Movies" value={searchTerm}
+                       onChange={(e)=>setSearchTerm(e.target.value)} />
+                <img src={SearchIcon} alt="search" onClick={()=>searchMovies(searchTerm)} />
             </div>
 
             {
@@ -42,9 +43,9 @@ const App = ()=>{
                 ?
                     (
                         <div className="container">
-                            {movies.map((movie)=>{
+                            {movies.map((movie)=>(
                                 <MovieCard movie={movie}/>
-                            })}
+                            ))}
                         </div>
                     ) : (
                         <div className="empty">
